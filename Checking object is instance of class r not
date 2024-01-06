@@ -1,0 +1,13 @@
+import java.util.Scanner;
+class Demo{ 
+	public static void main(String args[]){
+		Scanner read = new Scanner(System.in);
+		//String l= read.next(); //To read without spaces (single word)
+		//String s = read.nextLine(); // To read with spaces
+		//System.out.print(s);
+		Demo d = new Demo(); 
+		System.out.println(d instanceof Demo); // To check whether created object is instance of the class or not (True or False) 
+		System.out.println(read instanceof Scanner);
+		
+}
+}
