@@ -1,0 +1,12 @@
+class Person{
+    //member variables / attributes
+    String age; //non static /instance membr
+    int age; //non static /instance membr
+}
+public class OopExample{
+    public static void main(String[] sri){
+        Person p1 = new Person();
+        Sysetm.out.print(p1.age);
+        Sysetm.out.print(p1.name);
+    }
+}
