@@ -26,8 +26,8 @@ public class Task{
                 JFrame frame = new JFrame("fda");
                 frame.setVisible(true);
                 frame.setResizable(true);
-                frame.setBounds(20,10,1920,1080);
                 frame.setLayout(null);
+                frame.setBounds(20,10,1920,1080);
         
         
                 JLabel lbl1 = new JLabel();
