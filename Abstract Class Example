@@ -1,0 +1,31 @@
+// Abstract class
+abstract class Animal {
+    // Abstract method
+    public abstract void makeSound();
+
+    // Concrete method
+    public void sleep() {
+        System.out.println("Zzz");
+    }
+}
+
+// Concrete subclass
+class Dog extends Animal {
+    // Implementation of abstract method
+    public void makeSound() {
+        System.out.println("Woof");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Animal animal = new Animal(); // This line would cause an error because you cannot instantiate an abstract class
+
+        // Creating an instance of the concrete subclass Dog
+        Dog dog = new Dog();
+
+        // Calling methods
+        dog.makeSound(); // Output: Woof
+        dog.sleep();     // Output: Zzz
+    }
+}
