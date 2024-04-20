@@ -1,0 +1,22 @@
+public class Main {
+    public static void main(String[] args) {
+        // Create a StringBuffer with initial capacity of 16
+        StringBuffer buffer = new StringBuffer(16);
+        
+        // Append some strings
+        buffer.append("Hello, ");
+        buffer.append("world!");
+        
+        // Insert a string at index 7
+        buffer.insert(7, "Java ");
+        
+        // Delete characters from index 12 to 16
+        buffer.delete(12, 16);
+        
+        // Print the contents of the buffer
+        System.out.println("Buffer content: " + buffer.toString());
+        
+        // Print the length of the buffer
+        System.out.println("Buffer length: " + buffer.length());
+    }
+}
