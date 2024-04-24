@@ -1,0 +1,18 @@
+public class ThrowExample{
+    static void elegibility(int num){
+        if(num<18){
+            throws new ArithmeticException("You are not eligible");
+        }
+        else{
+            System.out.println("You can vote");
+        }
+    }
+    public class  static void main(String sri[]){
+        try{
+            eligibility(15);
+        }
+        ctach(ArithmeticException e){
+            System.out.println("Caught an Exception: "+e);
+        }
+    }
+}
