@@ -1,0 +1,18 @@
+class Constructor
+{
+ private Constructor() // Default Constructor
+ {
+ System.out.println("Default Constructor");
+ System.out.println("Welcome to Guest");
+ }
+ private Constructor(String name) // Parameterized Constructor
+ {
+ System.out.println("Parameterized Constructor");
+ System.out.println("Welcome to "+name);
+ }
+ public static void main(String args[])
+ {
+ Constructor c1=new Constructor(); // called Default Constructor
+ Constructor c2=new Constructor("samyuktha"); // called Parameterized Constructor
+ }
+}
