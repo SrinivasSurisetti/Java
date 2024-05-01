@@ -1,0 +1,29 @@
+class Notification
+{
+ String message;
+ Notification(String message) {
+ this.message = message;
+ }
+ void send() {
+ System.out.println(message);
+ }
+}
+class EmailNotification extends Notification {
+ String emailaddress;
+ EmailNotification(String message, String emailaddress) {
+ super(message); // Call the constructor of the superclass
+ this.emailaddress = emailaddress;
+ }
+ void send()
+ {
+ System.out.println(message + ": an email notification from " + emailaddress);
+ }
+}
+class RuntimePolymorphism {
+ public static void main(String[] args) {
+ Notification n = new Notification("This is a normal message");
+ EmailNotification e = new EmailNotification("Important email", "sravya@acet.ac.in");
+ n.send();
+ e.send();
+ }
+}
