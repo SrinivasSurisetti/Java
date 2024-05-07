@@ -1,0 +1,67 @@
+// Class with different member access levels
+public class MyClass {
+    public int publicField; // Public field
+    
+    protected int protectedField; // Protected field
+    
+    int defaultField; // Default (package-private) field
+    
+    private int privateField; // Private field
+    
+    // Constructor with different access levels
+    public MyClass() {
+        // Constructor can be public
+    }
+    
+    protected MyClass(int value) {
+        // Protected constructor
+    }
+    
+    MyClass(double value) {
+        // Default constructor (package-private)
+    }
+    
+    private MyClass(String value) {
+        // Private constructor
+    }
+    
+    // Method with different access levels
+    public void publicMethod() {
+        // Public method
+    }
+    
+    protected void protectedMethod() {
+        // Protected method
+    }
+    
+    void defaultMethod() {
+        // Default (package-private) method
+    }
+    
+    private void privateMethod() {
+        // Private method
+    }
+}
+
+// Another class to demonstrate member access
+public class AccessDemo {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        
+        // Accessing public members
+        obj.publicField = 10;
+        obj.publicMethod();
+        
+        // Accessing protected members (in subclass)
+        obj.protectedField = 20; // Allowed within the same package or by subclass
+        obj.protectedMethod();   // Allowed within the same package or by subclass
+        
+        // Accessing default members (in the same package)
+        obj.defaultField = 30;   // Allowed within the same package
+        obj.defaultMethod();     // Allowed within the same package
+        
+        // Private members are not accessible from here
+        // obj.privateField = 40;    // Compilation error
+        // obj.privateMethod();      // Compilation error
+    }
+}
