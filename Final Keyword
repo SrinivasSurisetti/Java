@@ -1,0 +1,10 @@
+class Final
+{
+public static void main(String args[])
+{
+final int a=10;
+System.out.println("before modification:"+a);
+a=a+10; //Error: cannot assign a value to final variable a a=a+10;
+System.out.println("after modification:"+a);
+}
+}
