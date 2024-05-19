@@ -1,0 +1,32 @@
+class Test
+{
+int a; //default access
+public int b; // public access
+private int c; // private access
+//methods to access c
+void setData(int i)
+{
+c=i;
+}
+int dispData()
+{
+return c;
+}
+}
+class AccessTest
+{
+public static void main(String args[])
+{
+Test ob=new Test();
+//a and b can be accessed directly
+ob.a=10;
+ ob.b=20;
+ // c can not be accessed directly because it is private
+//ob.c=100; // error
+ // private data must be accessed with methods of the same class
+ ob.setData(100);
+ System.out.println(" value of a, b and c are:"+ob.a+" "+ob.b+"
+"+ob.dispData());
+ ob.dispData();
+}
+}
