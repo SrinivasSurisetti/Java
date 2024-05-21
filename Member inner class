@@ -1,0 +1,17 @@
+class Outer
+{
+int a=10;
+class Inner // member inner class
+{
+int b=20;
+}
+}
+class MemberInnerClass
+{
+public static void main(String args[])
+{
+Outer m=new Outer();
+Outer.Inner n=m.new Inner();//syntax to create inner class object
+System.out.println(m.a+n.b);
+}
+}
