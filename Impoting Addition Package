@@ -1,0 +1,9 @@
+import pack.Addition;
+class UsePack
+{
+public static void main(String args[])
+{
+ Addition obj=new Addition(10,20.5);
+ obj.sum();
+}
+}
