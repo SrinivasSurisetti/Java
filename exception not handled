@@ -1,0 +1,10 @@
+class NoException
+{
+public static void main(String[] args)
+{
+int no=10;
+int r=0;
+r=no/0;
+System.out.println("Result is:"+r);
+}
+}
