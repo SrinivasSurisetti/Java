@@ -1,0 +1,21 @@
+public class SwapNibbles {
+    public static int swapNibbles(int n) {
+        // Ensure the number is within the range of 8-bit unsigned integer
+        if (n < 0 || n > 255) {
+            throw new IllegalArgumentException("Number must be between 0 and 255.");
+        }
+        // Isolate the lower nibble and shift it to the higher nibble's position
+        int lowerNibble = (n & 0x0F) << 4;
+        // Isolate the higher nibble and shift it to the lower nibble's position
+        int upperNibble = (n & 0xF0) >> 4;
+        // Combine the shifted nibbles
+        return lowerNibble | upperNibble;
+    }
+
+    public static void main(String[] args) {
+        int number = 100;
+        int result = swapNibbles(number);
+        System.out.println("Input: " + number);
+        System.out.println("Output: " + result);
+    }
+}
