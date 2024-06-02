@@ -1,0 +1,16 @@
+import java.io.*;
+class Test
+{
+ void doWork() throws IOException
+ {
+ throw new IOException();
+ }
+}
+class ThrowsTest1
+{
+ public static void main(String args[]) throws IOException
+ {
+ Test t1=new Test();
+ t1.doWork();
+ }
+ }
