@@ -1,0 +1,18 @@
+class StringDiff
+{
+public static void main(String args[])
+{
+ String s1=new String("sai");
+ String s2=new String("sai");
+ String s3="sai";
+ String s4="sai";
+ if(s1==s2)
+ System.out.println("Equal..");
+ else
+ System.out.println("NOT Equal..");
+ if(s3==s4)
+ System.out.println("Equal..");
+ else
+ System.out.println("NOT Equal..");
+}
+}
