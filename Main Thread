@@ -1,0 +1,10 @@
+class ThreadName
+{
+ public static void main(String args[])
+ {
+ System.out.println("Welcome ");
+ Thread t=Thread.currentThread();
+ System.out.println("Current Thread is : "+t);
+ System.out.println("Current Thread Name is : "+t.getName());
+ }
+}
