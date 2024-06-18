@@ -1,0 +1,36 @@
+// Define an interface with a default method
+public interface Animal {
+    void eat();
+    void sleep();
+
+    // Default method
+    default void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Implementing the Animal interface in a class named Cat
+public class Cat implements Animal {
+    @Override
+    public void eat() {
+        System.out.println("Cat is eating");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Cat is sleeping");
+    }
+
+    // Override the default method
+    @Override
+    public void makeSound() {
+        System.out.println("Cat meows");
+    }
+
+    public static void main(String[] args) {
+        Cat myCat = new Cat();
+        myCat.eat();
+        myCat.sleep();
+        myCat.makeSound();
+    }
+}
