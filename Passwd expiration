@@ -1,0 +1,41 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class PasswordExpiryChecker {
+    
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java PasswordExpiryChecker <username>");
+            return;
+        }
+
+        String username = args[0];
+        try {
+            // Create the process to execute the 'chage' command
+            ProcessBuilder pb = new ProcessBuilder("sudo", "chage", "-l", username);
+            Process process = pb.start();
+            
+            // Read the output of the command
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            String expiryDate = null;
+            
+            while ((line = reader.readLine()) != null) {
+                if (line.startsWith("Password expires")) {
+                    expiryDate = line.split(":")[1].trim();
+                    break;
+                }
+            }
+
+            int exitCode = process.waitFor();
+            if (exitCode == 0 && expiryDate != null) {
+                System.out.println("Password expires on: " + expiryDate);
+            } else {
+                System.out.println("Failed to retrieve password expiry date for user " + username);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
