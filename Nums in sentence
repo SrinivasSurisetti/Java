@@ -1,0 +1,14 @@
+import java.util.regex.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String sentence = "The car costs $20000 and the bike costs $1500. In total, they cost $21500.";
+        List<String> numbers = new ArrayList<>();
+        Matcher m = Pattern.compile("\\d+").matcher(sentence);
+        while (m.find()) {
+            numbers.add(m.group());
+        }
+        System.out.println(numbers);  // Output: [20000, 1500, 21500]
+    }
+}
