@@ -1,0 +1,22 @@
+public class CompositeCheck {
+    public static void main(String[] args) {
+        int number = 12; // Example number to check
+        if (isComposite(number)) {
+            System.out.println(number + " is a composite number.");
+        } else {
+            System.out.println(number + " is not a composite number.");
+        }
+    }
+
+    public static boolean isComposite(int num) {
+        if (num <= 1) {
+            return false; // 0 and 1 are neither prime nor composite
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return true; // num has a divisor other than 1 and itself
+            }
+        }
+        return false; // num is prime
+    }
+}
