@@ -1,0 +1,10 @@
+public class StringSlicingExample {
+    public static void main(String[] args) {
+        String originalString = "Java Programming";
+        
+        // Slice the string from index 5 (inclusive) to index 11 (exclusive)
+        String slicedString = originalString.substring(5, 11);
+        
+        System.out.println(slicedString);  // Output: Progra
+    }
+}
