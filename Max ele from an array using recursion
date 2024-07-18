@@ -1,0 +1,27 @@
+public class MaxElementFinder {
+
+    // Recursive method to find the maximum element
+    public static int findMax(int[] arr, int index, int currentMax) {
+        // Base case: If we have reached the end of the array
+        if (index == arr.length) {
+            return currentMax;
+        }
+
+        // Update the current maximum if necessary
+        if (arr[index] > currentMax) {
+            currentMax = arr[index];
+        }
+
+        // Recursive call to the next element in the array
+        return findMax(arr, index + 1, currentMax);
+    }
+
+    public static void main(String[] args) {
+        int[] array = {3, 5, 7, 2, 8, 6, 4};
+
+        // Initialize the recursion with the first element
+        int maxElement = findMax(array, 0, array[0]);
+
+        System.out.println("The maximum element in the array is: " + maxElement);
+    }
+}
