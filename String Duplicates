@@ -1,0 +1,22 @@
+import java.util.HashSet;
+
+public class DuplicateCheck {
+    public static boolean hasDuplicates(String[] array) {
+        HashSet<String> set = new HashSet<>();
+        for (String element : array) {
+            if (!set.add(element)) {
+                return true; // Duplicate found
+            }
+        }
+        return false; // No duplicates
+    }
+
+    public static void main(String[] args) {
+        String[] array = {"apple", "banana", "orange", "apple"};
+        if (hasDuplicates(array)) {
+            System.out.println("Array has duplicates.");
+        } else {
+            System.out.println("Array does not have duplicates.");
+        }
+    }
+}
