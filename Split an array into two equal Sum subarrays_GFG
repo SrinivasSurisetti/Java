@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+class Solution {
+    public boolean canSplit(int arr[]) {
+        // Calculate the total sum using stream().sum()
+        int total = Arrays.stream(arr).sum();
+        
+        // If the total sum is odd, we can't partition it into two equal subsets
+        if (total % 2 == 1) {
+            return false;
+        }
+        
+        int halfsum = total / 2;
+        
+        // Create a DP array to store results of sub-problems
+        boolean[] dp = new boolean[halfsum + 1];
+        dp[0] = true; // Zero sum is possible by not including any elements
+        
+        for (int num : arr) {
+            for (int i = halfsum; i >= num; i--) {
+                dp[i] = dp[i] || dp[i - num];
+            }
+        }
+        
+        return dp[halfsum];
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        
+        int[] arr1 = {1, 5, 11, 5};
+        System.out.println(solution.canSplit(arr1));  // Output: true
+        
+        int[] arr2 = {1, 2, 3, 5};
+        System.out.println(solution.canSplit(arr2));  // Output: false
+    }
+}
