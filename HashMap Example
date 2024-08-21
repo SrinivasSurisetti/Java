@@ -1,0 +1,21 @@
+import java.util.HashMap;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        HashMap<String, Integer> userAges = new HashMap<>();
+
+        // Adding key-value pairs to the HashMap
+        userAges.put("Alice", 30);
+        userAges.put("Bob", 25);
+        userAges.put("Charlie", 28);
+
+        // Retrieving a value based on a key
+        int age = userAges.get("Alice");
+        System.out.println("Alice's age: " + age);
+
+        // Checking if a key exists
+        if (userAges.containsKey("Bob")) {
+            System.out.println("Bob is in the map.");
+        }
+    }
+}
