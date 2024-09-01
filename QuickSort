@@ -1,0 +1,51 @@
+public class QuickSort {
+
+    // Function to perform the quicksort algorithm
+    public static void quickSort(int[] array, int low, int high) {
+        if (low < high) {
+            int partitionIndex = partition(array, low, high);
+
+            // Recursively sort elements before partition and after partition
+            quickSort(array, low, partitionIndex - 1);
+            quickSort(array, partitionIndex + 1, high);
+        }
+    }
+
+    // Function to partition the array
+    private static int partition(int[] array, int low, int high) {
+        int pivot = array[high]; // Choose the last element as pivot
+        int i = low - 1; // Index of the smaller element
+
+        for (int j = low; j < high; j++) {
+            // If the current element is smaller than or equal to the pivot
+            if (array[j] <= pivot) {
+                i++; // Increment the index of the smaller element
+                swap(array, i, j); // Swap elements
+            }
+        }
+
+        // Swap the pivot element with the element at index (i + 1)
+        swap(array, i + 1, high);
+        return i + 1; // Return the partition index
+    }
+
+    // Utility function to swap two elements in the array
+    private static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    // Main function to test the QuickSort algorithm
+    public static void main(String[] args) {
+        int[] array = { 10, 7, 8, 9, 1, 5 };
+        int n = array.length;
+
+        quickSort(array, 0, n - 1);
+
+        System.out.println("Sorted array: ");
+        for (int i : array) {
+            System.out.print(i + " ");
+        }
+    }
+}
