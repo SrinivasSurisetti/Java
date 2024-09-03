@@ -1,0 +1,7 @@
+public class Main {
+    public static void main(String[] args) {
+        char character = 'a';
+        int asciiValue = (int) character;
+        System.out.println("The ASCII value of 'a' is: " + asciiValue);
+    }
+}
